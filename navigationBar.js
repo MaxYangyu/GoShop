@@ -72,11 +72,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'gray'
     },
     navBar: {
+        marginLeft:10,
+        marginRight:10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         height: Platform.OS === 'ios' ? NAVBAR_HEIGHT_IOS : NAVBAR_HEIGHT_ANDROID, //判断机型
-        backgroundColor: 'red',
     },
     titleViewContainer: {
         justifyContent: 'center',

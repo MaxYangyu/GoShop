@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
+    Image,
+    TouchableOpacity,
     StyleSheet
 }
     from 'react-native';
@@ -16,24 +18,25 @@ class Boy extends Component {
         }
     }
 
+
     render() {
         return (
             <View style={styles.container}>
                 <NavigationBar
                     title={'Boy'}
                     statusBar={{
-                        backgroundColor:'red'
+                        backgroundColor: 'red'
                     }}
                 />
                 <Text style={styles.text}>I am Boy</Text>
-                <Text style={styles.text} onPress={()=>{
+                <Text style={styles.text} onPress={() => {
                     this.props.navigator.push({
-                        component:Girl,
-                        params:{
-                            word:'一支玫瑰',
-                            onCallBack:(word)=>{
+                        component: Girl,
+                        params: {
+                            word: '一支玫瑰',
+                            onCallBack: (word) => {
                                 this.setState({
-                                    word:word
+                                    word: word
                                 })
                             }
                         }
@@ -47,10 +50,10 @@ class Boy extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
+        flex: 1,
     },
-    text:{
-        fontSize:20,
+    text: {
+        fontSize: 20,
     }
 })
 export default Boy

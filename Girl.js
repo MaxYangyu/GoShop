@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
+    Image,
+    TouchableOpacity,
     StyleSheet
 }
     from 'react-native';
@@ -9,10 +11,19 @@ import NavigationBar from './navigationBar'
 
 class Girl extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             word: ''
         }
+    }
+
+    renderButton(image) {
+        return <TouchableOpacity onPress={()=>{
+            this.props.navigator.pop()
+        }
+        }>
+            <Image style={{width: 22, height: 22}} source={image}/>
+        </TouchableOpacity>
     }
 
     render() {
@@ -20,9 +31,15 @@ class Girl extends Component {
             <View style={styles.container}>
                 <NavigationBar
                     title={'Girl'}
-                    statusBar={{
-                        backgroundColor:'red'
+                    style={{
+                        backgroundColor:'#ee6363'
                     }}
+                    leftButton={
+                        this.renderButton(require('./res/images/ic_arrow_back_white_36pt.png'))
+                    }
+                    rightButton={
+                        this.renderButton(require('./res/images/ic_star.png'))
+                    }
                 />
                 <Text style={styles.text}>I am Girl</Text>
                 <Text style={styles.text}>收到了{this.props.word}</Text>
