@@ -7,7 +7,7 @@ import {
     StyleSheet
 }
     from 'react-native';
-import NavigationBar from './navigationBar'
+import NavigationBar from './js/common/navigationBar'
 
 class Girl extends Component {
     constructor(props) {

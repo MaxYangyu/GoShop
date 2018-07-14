@@ -8,7 +8,7 @@ import {
     TouchableOpacity,
     RefreshControl
 } from 'react-native'
-import NavigationBar from './navigationBar';
+import NavigationBar from './js/common/navigationBar';
 import Toast, {DURATION} from 'react-native-easy-toast'
 
 var data = {
