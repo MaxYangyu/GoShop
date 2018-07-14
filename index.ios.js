@@ -11,29 +11,70 @@ import {
     Text,
     View,
     Navigator,
+    ListView
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-import Boy from './Boy'
+import Boy from './Boy';
+import ListViewTest from './ListViewTest';
 
 export default class MyApp extends Component {
-    constructor(props){
-        super(props)
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedTab:'home',
+        }
     }
+
     render() {
         return (
             <View style={styles.container}>
                 {/*<TabNavigator>
-            <TabNavigator.Item
-              selected={this.state.selectedTab=='home'}
-              title='home'
-            ></TabNavigator.Item>
-        </TabNavigator>*/}
-                <Navigator
-                    initialRoute={{component: Boy}}
-                    renderScene={(route, navigator) => {
-                        let Component = route.component;
-                        return <Component navigator={navigator} {...route.params}/>
-                    }}></Navigator>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab === 'home'}
+                        title="Home"
+                        selectedTitleStyle={{color: 'red'}}
+                        renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')}/>}
+                        renderSelectedIcon={() => <Image style={[styles.image, {tintColor: 'red'}]}
+                                                         source={require('./res/images/ic_polular.png')}/>}
+                        badgeText="1"
+                        onPress={() => this.setState({selectedTab: 'home'})}>
+                        <View style={styles.page1}>首页</View>
+                    </TabNavigator.Item>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab === 'profile'}
+                        title="Profile"
+                        selectedTitleStyle={{color: 'red'}}
+                        renderIcon={() => <Image source={require('./res/images/ic_trending.png')}/>}
+                        renderSelectedIcon={() => <Image style={[styles.image, {tintColor: 'red'}]}
+                                                         source={require('./res/images/ic_trending.png')}/>}
+                        renderBadge={() => <CustomBadgeView/>}
+                        onPress={() => this.setState({selectedTab: 'profile'})}>
+                        <View style={styles.page2}></View>
+                    </TabNavigator.Item>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab === 'profile'}
+                        title="Profile"
+                        selectedTitleStyle={{color: 'red'}}
+                        renderIcon={() => <Image source={require('./res/images/ic_trending.png')}/>}
+                        renderSelectedIcon={() => <Image style={[styles.image, {tintColor: 'red'}]}
+                                                         source={require('./res/images/ic_trending.png')}/>}
+                        renderBadge={() => <CustomBadgeView/>}
+                        onPress={() => this.setState({selectedTab: 'profile'})}>
+                        <View style={styles.page2}></View>
+                    </TabNavigator.Item>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab === 'profile'}
+                        title="Profile"
+                        selectedTitleStyle={{color: 'red'}}
+                        renderIcon={() => <Image source={require('./res/images/ic_trending.png')}/>}
+                        renderSelectedIcon={() => <Image style={[styles.image, {tintColor: 'red'}]}
+                                                         source={require('./res/images/ic_trending.png')}/>}
+                        renderBadge={() => <CustomBadgeView/>}
+                        onPress={() => this.setState({selectedTab: 'profile'})}>
+                        <View style={styles.page2}></View>
+                    </TabNavigator.Item>
+                </TabNavigator>*/}
+                <ListViewTest/>
             </View>
         );
     }

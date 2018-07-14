@@ -55,6 +55,7 @@ class Girl extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor:'white'
     },
     text: {
         fontSize: 22
